@@ -21,11 +21,9 @@ void Game::start()
 
 void Game::init()
 {
-	timer.InitSystemTime();
 	srand(time(NULL));
-
-	//Spawn ship
-
+	timer.InitSystemTime();
+	// Spawn Ship
 	alive = false;
 	score = 0;
 
@@ -63,6 +61,7 @@ void Game::addAsteroide()
 	std::string mesh = "aste";
 
 	Asteroide aste = Asteroide(mesh, position, velocity, 3);
+	asteroides.push_back(aste);
 }
 
 void Game::addLaser()
@@ -71,7 +70,8 @@ void Game::addLaser()
 	Vector3f velocity = Vector3f(0, 0, 1.0);
 	std::string mesh = "laser";
 
-	Asteroide aste = Asteroide(mesh, position, velocity, 3);
+	Laser laser = Laser(mesh, position, velocity);
+	lasers.push_back(laser);
 }
 
 void Game::moveObjects()

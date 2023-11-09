@@ -18,6 +18,7 @@ class Game
 	Timer timer;
 	Keyboard keyboard;
 public:
+	Game();
 	void start();
 	void init();
 	void moveShip();
